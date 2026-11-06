@@ -1,0 +1,14 @@
+# Kebutuhan tambahan di luar aplikasi web. Tidak dipasang di hosting.
+#
+#   pip install -r requirements.txt -r requirements-dev.txt
+
+-r requirements.txt
+
+# Menjalankan ulang EDA pada src/data.py
+matplotlib
+seaborn
+
+# Menyusun dan memperbarui laporan (laporan/perbarui_daftar.py).
+# Hanya berjalan di Windows dan membutuhkan Microsoft Word.
+python-docx
+pywin32 ; sys_platform == "win32"

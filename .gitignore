@@ -1,0 +1,19 @@
+# CSV mentah tidak di-commit, cukup diunduh ulang dari Kaggle.
+data/raw/*
+!data/raw/.gitkeep
+
+# Berkas .npz dan .keras JUSTRU di-commit. Ukurannya kecil untuk dataset ini,
+# dan dengan begitu serah-terima antar anggota cukup lewat git pull.
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
+
+# Laporan dan catatan kerja disimpan lokal saja, tidak ikut ke repositori.
+laporan/
+DEPLOY.md

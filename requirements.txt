@@ -1,0 +1,23 @@
+# Kebutuhan aplikasi web saja. Sengaja dibuat sependek mungkin supaya proses
+# build di hosting tidak berat dan tidak mudah gagal. Kebutuhan untuk
+# menjalankan ulang EDA dan menyusun laporan ada di requirements-dev.txt.
+#
+# Versi di bawah sudah diuji bersama: model berhasil dimuat, preprocessor
+# berhasil dipakai, dan src/verifikasi.py mereproduksi seluruh angka di
+# artifacts/metrics.json.
+#
+# scikit-learn 1.6.1 -> versi yang membuat artifacts/preprocessor.joblib.
+#                       Pada scikit-learn 1.9 berkas ini GAGAL dimuat
+#                       (AttributeError: _RemainderColsList), jadi jangan
+#                       dinaikkan tanpa membuat ulang preprocessor-nya.
+# keras 3.15.1       -> versi yang menyimpan artifacts/model_final.keras.
+# tensorflow-cpu     -> varian cpu, karena hosting gratis tidak punya GPU dan
+#                       paket penuhnya jauh lebih besar.
+
+streamlit==1.66.1
+tensorflow-cpu==2.21.0
+keras==3.15.1
+scikit-learn==1.6.1
+joblib==1.6.0
+pandas==3.1.1
+numpy==2.5.4
