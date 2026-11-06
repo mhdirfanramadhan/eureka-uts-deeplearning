@@ -1,0 +1,279 @@
+{
+  "catatan": "Semua angka laporan diambil dari berkas ini. Data test dibuka satu kali. Ambang dan versi final ditentukan dari data validasi sebelum data test dibuka. PR-AUC dihitung dengan average_precision_score (scikit-learn), jadi bisa sedikit beda dari val_auc_pr milik Keras.",
+  "data_test": {
+    "n": 767,
+    "n_stroke": 38
+  },
+  "versi_final": "4_focal_ambang",
+  "model_final_sama_dengan_sumber": true,
+  "versi": {
+    "1_dasar": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.14292329457182615,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38,
+      "tn": 729,
+      "n_total": 767,
+      "n_stroke": 38,
+      "akurasi": 0.9504563233376793,
+      "akurasi_tebak_semua_tidak": 0.9504563233376793,
+      "pr_auc_acak": 0.04954367666232073,
+      "model": "model_dasar.keras",
+      "nama": "Dasar",
+      "selisih_vs_dasar": null
+    },
+    "2_weighted": {
+      "ambang": 0.5,
+      "precision": 0.11023622047244094,
+      "recall": 0.7368421052631579,
+      "f1": 0.19178082191780824,
+      "f2": 0.3448275862068966,
+      "pr_auc": 0.16470469868597523,
+      "tp": 28,
+      "fp": 226,
+      "fn": 10,
+      "tn": 503,
+      "n_total": 767,
+      "n_stroke": 38,
+      "akurasi": 0.6923076923076923,
+      "akurasi_tebak_semua_tidak": 0.9504563233376793,
+      "pr_auc_acak": 0.04954367666232073,
+      "model": "model_weighted.keras",
+      "nama": "Class weight",
+      "selisih_vs_dasar": {
+        "pasien_stroke_terdeteksi": 28,
+        "tambahan_salah_alarm": 226,
+        "selisih_pr_auc": 0.021781404114149083,
+        "bermakna": true
+      }
+    },
+    "3_focal": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.16102730303410334,
+      "tp": 0,
+      "fp": 0,
+      "fn": 38,
+      "tn": 729,
+      "n_total": 767,
+      "n_stroke": 38,
+      "akurasi": 0.9504563233376793,
+      "akurasi_tebak_semua_tidak": 0.9504563233376793,
+      "pr_auc_acak": 0.04954367666232073,
+      "model": "model_focal.keras",
+      "nama": "Focal loss",
+      "selisih_vs_dasar": {
+        "pasien_stroke_terdeteksi": 0,
+        "tambahan_salah_alarm": 0,
+        "selisih_pr_auc": 0.018104008462277194,
+        "bermakna": false
+      }
+    },
+    "4_focal_ambang": {
+      "ambang": 0.26022979617118835,
+      "precision": 0.1810344827586207,
+      "recall": 0.5526315789473685,
+      "f1": 0.27272727272727276,
+      "f2": 0.39179104477611937,
+      "pr_auc": 0.16102730303410334,
+      "tp": 21,
+      "fp": 95,
+      "fn": 17,
+      "tn": 634,
+      "n_total": 767,
+      "n_stroke": 38,
+      "akurasi": 0.8539765319426337,
+      "akurasi_tebak_semua_tidak": 0.9504563233376793,
+      "pr_auc_acak": 0.04954367666232073,
+      "model": "model_focal.keras",
+      "nama": "Focal + ambang",
+      "selisih_vs_dasar": {
+        "pasien_stroke_terdeteksi": 21,
+        "tambahan_salah_alarm": 95,
+        "selisih_pr_auc": 0.018104008462277194,
+        "bermakna": true
+      },
+      "selisih_vs_focal_ambang_0_5": {
+        "pasien_stroke_terdeteksi": 21,
+        "tambahan_salah_alarm": 95,
+        "bermakna": true
+      }
+    }
+  },
+  "kesalahan": {
+    "versi_dianalisis_profil": "4_focal_ambang",
+    "luput": {
+      "n_stroke": 38,
+      "n_versi": 4,
+      "luput_di_semua_versi": 10,
+      "luput_di_sebagian_versi": 28,
+      "terdeteksi_di_semua_versi": 0,
+      "indeks_baris_test_luput_di_semua_versi": [
+        57,
+        168,
+        176,
+        258,
+        323,
+        363,
+        397,
+        591,
+        607,
+        654
+      ]
+    },
+    "profil": {
+      "TP": {
+        "n": 21,
+        "rata2_age": 73.9,
+        "rata2_avg_glucose_level": 131.93,
+        "rata2_bmi": 30.51,
+        "persen_hypertension": 47.6,
+        "persen_heart_disease": 14.3
+      },
+      "FN": {
+        "n": 17,
+        "rata2_age": 61.06,
+        "rata2_avg_glucose_level": 118.06,
+        "rata2_bmi": 31.93,
+        "persen_hypertension": 23.5,
+        "persen_heart_disease": 5.9
+      },
+      "FP": {
+        "n": 95,
+        "rata2_age": 70.77,
+        "rata2_avg_glucose_level": 144.08,
+        "rata2_bmi": 30.43,
+        "persen_hypertension": 37.9,
+        "persen_heart_disease": 18.9
+      },
+      "TN": {
+        "n": 634,
+        "rata2_age": 38.24,
+        "rata2_avg_glucose_level": 101.28,
+        "rata2_bmi": 28.96,
+        "persen_hypertension": 6.0,
+        "persen_heart_disease": 2.2
+      }
+    }
+  },
+  "overfitting": {
+    "dasar": {
+      "epoch_jalan": 45,
+      "epoch_terbaik": 30,
+      "loss_latih_di_epoch_terbaik": 0.15882718563079834,
+      "loss_val_di_epoch_terbaik": 0.16787630319595337,
+      "selisih_val_minus_latih_di_epoch_terbaik": 0.00904911756515503,
+      "epoch_val_loss_terendah": 32,
+      "val_loss_terendah": 0.16708403825759888,
+      "val_loss_akhir": 0.16971586644649506,
+      "kenaikan_val_loss_akhir_dari_terendah_persen": 1.6,
+      "loss_latih_masih_turun_sampai_akhir": true,
+      "indikasi_overfitting": false
+    },
+    "weighted": {
+      "epoch_jalan": 72,
+      "epoch_terbaik": 57,
+      "loss_latih_di_epoch_terbaik": 0.7640210390090942,
+      "loss_val_di_epoch_terbaik": 0.46063730120658875,
+      "selisih_val_minus_latih_di_epoch_terbaik": -0.3033837378025055,
+      "epoch_val_loss_terendah": 70,
+      "val_loss_terendah": 0.44727733731269836,
+      "val_loss_akhir": 0.46065086126327515,
+      "kenaikan_val_loss_akhir_dari_terendah_persen": 3.0,
+      "loss_latih_masih_turun_sampai_akhir": true,
+      "indikasi_overfitting": false,
+      "catatan": "loss latih dikali bobot kelas, loss validasi tidak: selisih keduanya tidak sebanding dengan model lain"
+    },
+    "focal": {
+      "epoch_jalan": 53,
+      "epoch_terbaik": 38,
+      "loss_latih_di_epoch_terbaik": 0.018037648871541023,
+      "loss_val_di_epoch_terbaik": 0.018927479162812233,
+      "selisih_val_minus_latih_di_epoch_terbaik": 0.0008898302912712097,
+      "epoch_val_loss_terendah": 53,
+      "val_loss_terendah": 0.01821126416325569,
+      "val_loss_akhir": 0.01821126416325569,
+      "kenaikan_val_loss_akhir_dari_terendah_persen": 0.0,
+      "loss_latih_masih_turun_sampai_akhir": false,
+      "indikasi_overfitting": false
+    }
+  },
+  "validasi_dari_threshold_json": {
+    "1_dasar": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.23165687375374278,
+      "tp": 0,
+      "fp": 0,
+      "fn": 37,
+      "tn": 729,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.9516971279373369,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "2_weighted": {
+      "ambang": 0.5,
+      "precision": 0.1206896551724138,
+      "recall": 0.7567567567567568,
+      "f1": 0.20817843866171004,
+      "f2": 0.3684210526315789,
+      "pr_auc": 0.29180578134987567,
+      "tp": 28,
+      "fp": 204,
+      "fn": 9,
+      "tn": 525,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.7219321148825065,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "3_focal": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.21696757638236644,
+      "tp": 0,
+      "fp": 0,
+      "fn": 37,
+      "tn": 729,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.9516971279373369,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "4_focal_ambang": {
+      "ambang": 0.26022979617118835,
+      "precision": 0.184,
+      "recall": 0.6216216216216216,
+      "f1": 0.2839506172839506,
+      "f2": 0.4212454212454212,
+      "pr_auc": 0.21696757638236644,
+      "tp": 23,
+      "fp": 102,
+      "fn": 14,
+      "tn": 627,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.8485639686684073,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    }
+  }
+}

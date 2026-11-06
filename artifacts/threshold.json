@@ -1,0 +1,111 @@
+{
+  "ambang": 0.26022979617118835,
+  "versi_final": "4_focal_ambang",
+  "model_final": "model_final.keras",
+  "sumber_model": "model_focal.keras",
+  "dicari_dari": "data validasi",
+  "aturan_pemilihan": "F2 validasi tertinggi, seri dipecah PR-AUC validasi",
+  "pencarian": {
+    "ambang": 0.26022979617118835,
+    "beta": 2.0,
+    "f_beta": 0.4212454212454212,
+    "precision": 0.184,
+    "recall": 0.6216216216216216,
+    "tp": 23,
+    "fp": 102,
+    "jumlah_ambang_seri": 1,
+    "f_beta_jika_semua_ditebak_stroke": 0.20240700218818378
+  },
+  "versi": {
+    "1_dasar": {
+      "model": "dasar",
+      "ambang": 0.5
+    },
+    "2_weighted": {
+      "model": "weighted",
+      "ambang": 0.5
+    },
+    "3_focal": {
+      "model": "focal",
+      "ambang": 0.5
+    },
+    "4_focal_ambang": {
+      "model": "focal",
+      "ambang": 0.26022979617118835
+    }
+  },
+  "validasi": {
+    "1_dasar": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.23165687375374278,
+      "tp": 0,
+      "fp": 0,
+      "fn": 37,
+      "tn": 729,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.9516971279373369,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "2_weighted": {
+      "ambang": 0.5,
+      "precision": 0.1206896551724138,
+      "recall": 0.7567567567567568,
+      "f1": 0.20817843866171004,
+      "f2": 0.3684210526315789,
+      "pr_auc": 0.29180578134987567,
+      "tp": 28,
+      "fp": 204,
+      "fn": 9,
+      "tn": 525,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.7219321148825065,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "3_focal": {
+      "ambang": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "pr_auc": 0.21696757638236644,
+      "tp": 0,
+      "fp": 0,
+      "fn": 37,
+      "tn": 729,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.9516971279373369,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    },
+    "4_focal_ambang": {
+      "ambang": 0.26022979617118835,
+      "precision": 0.184,
+      "recall": 0.6216216216216216,
+      "f1": 0.2839506172839506,
+      "f2": 0.4212454212454212,
+      "pr_auc": 0.21696757638236644,
+      "tp": 23,
+      "fp": 102,
+      "fn": 14,
+      "tn": 627,
+      "n_total": 766,
+      "n_stroke": 37,
+      "akurasi": 0.8485639686684073,
+      "akurasi_tebak_semua_tidak": 0.9516971279373369,
+      "pr_auc_acak": 0.048302872062663184
+    }
+  },
+  "data_validasi": {
+    "n": 766,
+    "n_stroke": 37
+  }
+}
