@@ -17,7 +17,7 @@ with st.form("pasien"):
 
     with kiri:
         gender = st.selectbox("Jenis kelamin", ["Male", "Female"])
-        age = st.number_input("Umur (tahun)", 0.0, 100.0, 50.0, step=1.0)
+        age = st.number_input("Umur (tahun)", 0, 100, 50, step=1)
         hypertension = st.selectbox("Riwayat hipertensi", [0, 1])
         heart_disease = st.selectbox("Riwayat penyakit jantung", [0, 1])
         ever_married = st.selectbox("Pernah menikah", ["Yes", "No"])
