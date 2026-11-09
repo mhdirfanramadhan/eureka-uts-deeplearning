@@ -1,0 +1,79 @@
+{
+  "num_cols": [
+    "age",
+    "avg_glucose_level",
+    "bmi"
+  ],
+  "mean": [
+    43.250604026845636,
+    105.46874720357941,
+    28.767086129753917
+  ],
+  "scale": [
+    22.681957120799396,
+    44.36474216879246,
+    7.694845525511572
+  ],
+  "cat_cols": [
+    "gender",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "smoking_status"
+  ],
+  "kategori": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "hypertension": [
+      0,
+      1
+    ],
+    "heart_disease": [
+      0,
+      1
+    ],
+    "ever_married": [
+      "No",
+      "Yes"
+    ],
+    "work_type": [
+      "Govt_job",
+      "Never_worked",
+      "Private",
+      "Self-employed",
+      "children"
+    ],
+    "Residence_type": [
+      "Rural",
+      "Urban"
+    ],
+    "smoking_status": [
+      "Unknown",
+      "formerly smoked",
+      "never smoked",
+      "smokes"
+    ]
+  },
+  "buang_kategori_pertama": true,
+  "nama_fitur": [
+    "num__age",
+    "num__avg_glucose_level",
+    "num__bmi",
+    "cat__gender_Male",
+    "cat__hypertension_1",
+    "cat__heart_disease_1",
+    "cat__ever_married_Yes",
+    "cat__work_type_Never_worked",
+    "cat__work_type_Private",
+    "cat__work_type_Self-employed",
+    "cat__work_type_children",
+    "cat__Residence_type_Urban",
+    "cat__smoking_status_formerly smoked",
+    "cat__smoking_status_never smoked",
+    "cat__smoking_status_smokes"
+  ]
+}
